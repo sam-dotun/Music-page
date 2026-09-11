@@ -1,0 +1,438 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --bg: #faf7f2;
+  --surface: #ffffff;
+  --ink: #241c1c;
+  --ink-soft: #5a4f4f;
+  --accent: #b5482e;    
+  --accent-dark: #8a341f;
+  --accent-soft: #f6e6df;
+  --gold: #c9973a;
+  --line: #e8ddd0;
+  --radius: 14px;
+  --shadow: 0 4px 18px rgba(36, 28, 28, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 3rem 1.5rem 6rem;
+  background: var(--bg);
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(197, 138, 58, 0.06), transparent 45%),
+    radial-gradient(circle at 85% 20%, rgba(181, 72, 46, 0.05), transparent 40%);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 780px;
+  margin-inline: auto;
+}
+
+/* ---------- Headings ---------- */
+
+h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.6rem, 5vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.15em;
+  color: var(--ink);
+}
+
+h1 strong {
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--accent), var(--gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+small {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--accent-dark);
+  margin: 3rem 0 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--accent-soft);
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 60px;
+  height: 2px;
+  background: var(--accent);
+}
+
+h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 1.6rem 0 0.6rem;
+}
+
+/* ---------- Text & inline elements ---------- */
+
+p {
+  margin: 0 0 1.1rem;
+  color: var(--ink);
+}
+
+strong, b {
+  color: var(--accent-dark);
+  font-weight: 700;
+}
+
+mark {
+  background: linear-gradient(180deg, transparent 55%, #f6d98a 55%);
+  padding: 0 0.15em;
+  color: var(--ink);
+}
+
+u {
+  text-decoration: none;
+  border-bottom: 2px dotted var(--gold);
+}
+
+del {
+  color: #a89b9b;
+  text-decoration: line-through wavy #c98a8a;
+}
+
+ins {
+  color: var(--accent-dark);
+  text-decoration: none;
+  background: var(--accent-soft);
+  padding: 0 0.2em;
+  border-radius: 3px;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-dark);
+  opacity: 0.85;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: var(--line);
+  margin: 2.5rem 0;
+}
+
+/* ---------- Lists ---------- */
+
+ul, ol {
+  margin: 0 0 1.2rem;
+  padding-left: 1.4rem;
+}
+
+li {
+  margin-bottom: 0.45rem;
+  color: var(--ink);
+}
+
+ul li::marker {
+  color: var(--accent);
+}
+
+ol li::marker {
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+
+/* ---------- Quotes & code blocks ---------- */
+
+blockquote {
+  margin: 1.5rem 0;
+  padding: 1.2rem 1.5rem;
+  background: var(--surface);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-style: italic;
+  color: var(--ink-soft);
+  box-shadow: var(--shadow);
+}
+
+q {
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+q::before, q::after {
+  color: var(--accent);
+}
+
+pre {
+  background: #241c1c;
+  color: #f3e9df;
+  padding: 1.2rem 1.4rem;
+  border-radius: var(--radius);
+  overflow-x: auto;
+  font-family: 'SFMono-Regular', Consolas, Menlo, monospace;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  box-shadow: var(--shadow);
+}
+
+sub, sup {
+  font-size: 0.75em;
+}
+
+/* ---------- Images / media ---------- */
+
+img {
+  max-width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: block;
+  margin: 1rem 0;
+}
+
+video, audio {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin: 1rem 0;
+}
+
+audio {
+  background: var(--surface);
+  padding: 0.6rem;
+}
+
+/* ---------- Details / FAQ accordion ---------- */
+
+details {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.9rem 1.2rem;
+  margin-bottom: 0.8rem;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.2s ease;
+}
+
+details[open] {
+  box-shadow: 0 6px 22px rgba(36, 28, 28, 0.12);
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary h3 {
+  margin: 0.2rem 0;
+  color: var(--accent-dark);
+}
+
+summary::after {
+  content: "+";
+  font-size: 1.4rem;
+  color: var(--accent);
+  margin-left: 1rem;
+  transition: transform 0.25s ease;
+}
+
+details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+details p {
+  margin-top: 0.7rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- Table ---------- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.2rem 0;
+  background: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+thead th {
+  background: var(--accent);
+  color: #fff;
+  text-align: left;
+  padding: 0.85rem 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+tbody td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  vertical-align: top;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:nth-child(even) {
+  background: #fbf5ef;
+}
+
+tbody tr:hover {
+  background: var(--accent-soft);
+  transition: background 0.2s ease;
+}
+
+/* ---------- Form ---------- */
+
+form {
+  background: var(--surface);
+  padding: 1.8rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+}
+
+form label {
+  display: inline-block;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0.3rem 0;
+}
+
+form input[type="text"],
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  margin-top: 0.4rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fffdfb;
+  font-family: inherit;
+  font-size: 0.98rem;
+  color: var(--ink);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+form input[type="text"]:focus,
+form select:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(181, 72, 46, 0.15);
+}
+
+form select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8'><path d='M0 0l6 8 6-8z' fill='%23b5482e'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.9rem center;
+  padding-right: 2rem;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+form input[type="checkbox"],
+form input[type="radio"] {
+  accent-color: var(--accent);
+  width: 16px;
+  height: 16px;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+form button {
+  margin-top: 1.4rem;
+  padding: 0.75rem 1.8rem;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(181, 72, 46, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(181, 72, 46, 0.4);
+}
+
+form button:active {
+  transform: translateY(0);
+}
+
+/* ---------- Responsive tweaks ---------- */
+
+@media (max-width: 600px) {
+  body {
+    padding: 2rem 1.1rem 4rem;
+    font-size: 16px;
+  }
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  thead {
+    display: none;
+  }
+  tbody tr {
+    margin-bottom: 1rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 0.5rem 0.8rem;
+  }
+  tbody td {
+    border: none;
+    padding: 0.4rem 0;
+  }
+  tbody td:first-child {
+    font-weight: 700;
+    color: var(--accent-dark);
+  }
+}
